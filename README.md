@@ -1,5 +1,5 @@
 # plugin-lgpd
-Criação de Plugin para aceitação de termos e aceite (LGPD)
+Criação de Plugin para aceitação de termos e aceite (GDPR)
 
 Desktop
 ![desktop](https://user-images.githubusercontent.com/8972255/97246103-4e11d400-17db-11eb-9afd-e55c855c0259.png)
