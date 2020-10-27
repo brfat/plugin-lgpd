@@ -1,0 +1,51 @@
+.content-gdpr {
+    padding: 10px;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    width: 100%;
+    font-size: 13px;
+    width: 100% !important;
+    bottom: 0;
+    max-width: 100% !important;
+    background: #3185fc;
+    color: #0b4f6c;
+    border: 5px solid #403f4c;
+}
+
+
+a.hide-content {
+    background: #403f4c;
+    padding: 5px 25px 5px 25px;
+    border-radius: 10px;
+    color: #ffff;
+    font-size: 11px;
+    width: 100px;
+    margin-left: 10px;
+    line-height: 28px;
+    text-align: center;
+    text-decoration: none;
+}
+
+a.hide-content:hover {
+    background: orange;
+    color: #ffff;
+}
+
+
+
+/*** Responsividade ****/
+@media (max-width: 480px) {
+
+    .content-gdpr { 
+        flex-direction: column;
+    }
+
+    a.hide-content {
+        margin-top: 20px;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+    }
+
+}
