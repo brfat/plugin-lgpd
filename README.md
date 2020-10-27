@@ -1,6 +1,8 @@
 # plugin-lgpd
 Criação de Plugin para aceitação de termos e aceite (GDPR)
 
+![aparencia-new](https://user-images.githubusercontent.com/8972255/97333334-3af21900-185a-11eb-97f2-ada2c4018d2c.png)
+
 Desktop
 ![desktop](https://user-images.githubusercontent.com/8972255/97246103-4e11d400-17db-11eb-9afd-e55c855c0259.png)
 

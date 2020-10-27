@@ -1,16 +1,23 @@
+
+/* Desktop */
+
 .content-gdpr {
+    position: fixed;
+    left: 0;
     padding: 10px;
     display: flex;
-    position: fixed;
+    align-items: center;
     justify-content: center;
     width: 100%;
     font-size: 13px;
     width: 100% !important;
     bottom: 0;
+    height: 75px;
     max-width: 100% !important;
     background: #3185fc;
     color: #0b4f6c;
     border: 5px solid #403f4c;
+    z-index: 9999;
 }
 
 
@@ -39,6 +46,7 @@ a.hide-content:hover, a.policy:hover {
 
     .content-gdpr { 
         flex-direction: column;
+        height: 260px;
     }
 
     a.hide-content, a.policy {

@@ -12,11 +12,7 @@
                 console.log("Clique disparando");
                 $(".content-gdpr").remove();
                 $.cookie('a.hide-content', true);
-            });
-
-    
-
-
+            });   
 
     });
 
