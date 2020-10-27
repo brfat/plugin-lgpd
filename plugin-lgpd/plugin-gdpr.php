@@ -100,7 +100,7 @@ add_action( 'wp_enqueue_scripts', 'register_styles' );
             $wp_customize,
             'campo6',
             array(
-            'label' => 'Selecione o background da seção LGPD',
+            'label' => 'Selecione o background da seção GDPR',
             'section' => 'campos_de_texto',
         )
         ));
