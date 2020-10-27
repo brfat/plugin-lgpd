@@ -14,34 +14,34 @@
 }
 
 
-a.hide-content {
+a.hide-content, a.policy {
     background: #403f4c;
-    padding: 5px 25px 5px 25px;
+    padding: 5px 5px 5px 5px;
     border-radius: 10px;
     color: #ffff;
     font-size: 11px;
-    width: 100px;
+    width: 230px;
     margin-left: 10px;
     line-height: 28px;
     text-align: center;
     text-decoration: none;
 }
 
-a.hide-content:hover {
-    background: orange;
+a.hide-content:hover, a.policy:hover {
+    background: #5e5d61;
     color: #ffff;
 }
 
 
 
 /*** Responsividade ****/
-@media (max-width: 480px) {
+@media (max-width: 767px) {
 
     .content-gdpr { 
         flex-direction: column;
     }
 
-    a.hide-content {
+    a.hide-content, a.policy {
         margin-top: 20px;
         text-align: center;
         width: 100%;

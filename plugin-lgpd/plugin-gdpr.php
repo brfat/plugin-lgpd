@@ -32,7 +32,12 @@ function register_styles() {
         wp_enqueue_style( 'style-lgpd',  plugin_dir_url( __FILE__ ) . 'css/style.css' );
 
         wp_enqueue_script('script-lgpd', plugin_dir_url( __FILE__ ) . 'js/main.js' );
+
+        wp_register_script('cookie-js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js');
+
+        wp_enqueue_script('cookie-js');
  }
+
 add_action( 'wp_enqueue_scripts', 'register_styles' );
 
 
@@ -49,7 +54,6 @@ add_action( 'wp_enqueue_scripts', 'register_styles' );
         )
         );
 
-        // Adicionando configuração do Textarea
         $wp_customize->add_setting(
             'campo1',
         array(
@@ -65,11 +69,12 @@ add_action( 'wp_enqueue_scripts', 'register_styles' );
             "label"    => "Label do campo 1", 
             "section"  => "campos_de_texto",
             "settings" => "campo1",
-            "type"     => "textarea",         )
+            "type"     => "textarea",
+            )
         ));
 
 
-        // Adicionando configuração da cor da fonte
+        // Setting do campo5
         $wp_customize->add_setting(
             'campo5', 
         array(
@@ -77,7 +82,7 @@ add_action( 'wp_enqueue_scripts', 'register_styles' );
             'transport' => 'refresh', 
         )
         );
-        
+        // Controle do campo5
         $wp_customize->add_control(new WP_Customize_Color_Control(
             $wp_customize,
             'campo5',
@@ -88,7 +93,7 @@ add_action( 'wp_enqueue_scripts', 'register_styles' );
         ));
 
 
-         // Adicionando configuração do background
+
         $wp_customize->add_setting(
             'campo6', 
         array(
@@ -100,18 +105,39 @@ add_action( 'wp_enqueue_scripts', 'register_styles' );
             $wp_customize,
             'campo6',
             array(
-            'label' => 'Selecione o background da seção GDPR',
+            'label' => 'Selecione o background da seção LGPD',
             'section' => 'campos_de_texto',
         )
         ));
+
+        $wp_customize->add_setting(
+            'campo7',
+        array(
+            'default'   => '', 
+            'transport' => 'refresh',
+        )
+        );
+
+        $wp_customize->add_control(new WP_Customize_Control(
+            $wp_customize,
+            "campo7", 
+        array(
+            "label"    => "Insira o link de politicas de privacidade", 
+            "section"  => "campos_de_texto",
+            "settings" => "campo7",
+            "type"     => "text",
+            )
+        ));
+
+
+
     }
 
     // Registrando a nossa função lgpd
     add_action('customize_register', 'function_gdpr');
 
 
-    
-   //Conteudo LGPD
+    //Conteudo LGPD
     function content_gdpr() {
         $content = get_theme_mod(campo1);
 
@@ -122,8 +148,13 @@ add_action( 'wp_enqueue_scripts', 'register_styles' );
         }
 
         else {
-            return '<div class="content-gdpr" style="color:' . get_theme_mod(campo5) . ';background:'. get_theme_mod(campo6) . ';justify-content: center;">' . get_theme_mod(campo1) . '<a class="hide-content" href="#">Aceito</a></div>';
+            return '<div class="content-gdpr" style="color:' . get_theme_mod(campo5) . ';background:'. get_theme_mod(campo6) . ';justify-content: center;">' . get_theme_mod(campo1) . '<a class="hide-content" href="#">Aceito</a><a class="policy" target="blank" href="'. get_theme_mod(campo7) . '">Politicas de Privacidade</a></div>';
         }
     }
 
     add_action('the_content', 'content_gdpr');
+
+    
+
+
+    
